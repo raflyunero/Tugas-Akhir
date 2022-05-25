@@ -12,6 +12,7 @@ public class KTC extends JDialog {
     private JButton KoplingKTC;
     private JButton prosesButton;
     public JTextArea textHasil;
+    public  JFrame delete;
 
     public KTC() {
         MasterKTC.addActionListener(new ActionListener() {
@@ -73,6 +74,8 @@ public class KTC extends JDialog {
     }
     public static void main(String[] args) {
         JFrame KTC = new JFrame("Brand KTC");
+        KTC frame = new KTC();
+        frame.delete = KTC;
         KTC.setContentPane(new KTC().KTCPanel);
         KTC.pack();
         KTC.setVisible(true);

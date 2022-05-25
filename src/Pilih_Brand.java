@@ -7,6 +7,7 @@ public class Pilih_Brand extends JDialog {
     private JButton KTCButton;
     private JButton RCBButton;
     public JPanel PanelBrand;
+    public JFrame delete;
 
     public Pilih_Brand() {
         KTCButton.addActionListener(new ActionListener() {
@@ -21,6 +22,7 @@ public class Pilih_Brand extends JDialog {
                 kedua.setSize(600, 600);
                 kedua.setResizable(true);
                 kedua.setVisible(true);
+                delete.setVisible(false);
             }
         });
         RCBButton.addActionListener(new ActionListener() {
@@ -35,12 +37,15 @@ public class Pilih_Brand extends JDialog {
                 ketiga.setLocation(400 , 120);
                 ketiga.setResizable(true);
                 ketiga.setVisible(true);
+                delete.setVisible(false);
             }
         });
     }
     public static void main(String[] args) {
         JFrame pilih_brand = new JFrame("Pilih Brand");
-        pilih_brand.setContentPane(new Pilih_Brand().PanelBrand);
+        Pilih_Brand frame = new Pilih_Brand();
+        frame.delete = pilih_brand;
+        pilih_brand.setContentPane(frame.PanelBrand);
         pilih_brand.pack();
         pilih_brand.setVisible(true);
         pilih_brand.setSize(600, 600);

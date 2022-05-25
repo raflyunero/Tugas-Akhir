@@ -6,6 +6,7 @@ public class yakin extends  JDialog{
     private JButton yakinButton;
     public JPanel yakinPanel;
     private JButton tidakButton;
+    public JFrame delete;
 
     public yakin() {
         yakinButton.addActionListener(new ActionListener() {
@@ -26,12 +27,15 @@ public class yakin extends  JDialog{
                 utama.setSize(450 , 400);
                 utama.setLocation(500 , 250);
                 utama.setVisible(true);
+                delete.setVisible(false);
             }
         });
     }
 
     public static void main(String[] args) {
         JFrame yakin = new JFrame("Anda Yakin?");
+        yakin frame = new yakin();
+        frame.delete = yakin;
         yakin.setContentPane(new yakin().yakinPanel);
         yakin.pack();
         yakin.setVisible(true);

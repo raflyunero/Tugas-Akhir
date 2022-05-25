@@ -12,6 +12,7 @@ public class BeliRCB extends JDialog {
     public JPanel PanelRCB;
     private JTextArea textHasil;
     private JButton checkoutButton;
+    public JFrame delete;
 
     public BeliRCB() {
         VelgRCB.addActionListener(new ActionListener() {
@@ -73,6 +74,8 @@ public class BeliRCB extends JDialog {
 
     public static void main(String[] args) {
         JFrame BeliRCB = new JFrame(" Brand RCB");
+        BeliRCB frame = new BeliRCB();
+        frame.delete = BeliRCB;
         BeliRCB.setContentPane(new BeliRCB().PanelRCB);
         BeliRCB.pack();
         BeliRCB.setVisible(true);
