@@ -1,14 +1,25 @@
-public class Setter {
-    public static void main(String[] args) {
-        //Pengunaan Encapsulation Setter Getter
-        Login main = new Login();
-        String email = main.getEmail().getText();
-        String pass = main.getPassword().getText();
-        String emailSet = "Rafly";
-        String passSet = "123456";
-        main.setEmail(emailSet);
-        main.setPassword(passSet);
-        main.setEmailandPassword();
+import javax.swing.*;
 
+public class Setter {
+    //Encapsulation setter
+    private String email;
+    private String password;
+
+    public Setter(){
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }
