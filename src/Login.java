@@ -10,15 +10,14 @@ public class Login extends JDialog { // class
     private JPasswordField Password;
     private JFrame deleteFrame;
 
-    //Encapsulation setter
-    private String email;
-    private String password;
-
     public Login() { // constructor
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (Email.getText().equals("Rafly") && Password.getText().equals("12345")){ //pengkondisian dan setter getter
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Setter main = new Setter();
+                main.setEmail("Rafly");
+                main.setPassword("12345");
+                if (Email.getText().equals(main.getEmail()) && Password.getText().equals(main.getPassword())){ //pengkondisian dan setter getter
                     JOptionPane.showMessageDialog(null, "Selamat Datang");
                     JFrame utama = new JFrame("Pilih Brand"); //Object Oriented Programming
                     Pilih_Brand frame = new Pilih_Brand();
@@ -44,26 +43,7 @@ public class Login extends JDialog { // class
         });
     }
 
-    //Encapsulation
-    public JTextField getEmail() {
-        return Email;
-    }
-    public JPasswordField getPassword() {
-        return Password;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setEmailandPassword(){
-        Email.setText(email);
-        Password.setText(password);
-    }
-
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         JFrame frame = new JFrame("Login");
         Login login = new Login();
         login.deleteFrame = frame;
